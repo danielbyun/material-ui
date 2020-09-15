@@ -129,7 +129,14 @@ const HeaderTabs = ({
           />
         ))}
       </Tabs>
-      <Button variant="contained" color="secondary" className={classes.button}>
+      <Button
+        component={Link}
+        to="/estimate"
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        onClick={() => setTabValue(5)}
+      >
         Free Estimate
       </Button>
       <div

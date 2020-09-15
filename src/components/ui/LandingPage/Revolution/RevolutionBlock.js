@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import ButtonArrow from "../../ButtonArrow/ButtonArrow";
 import revolutionBackground from "../../../../assets/repeatingBackground.svg";
+import { Link } from "react-router-dom";
 
 const useStyle = makeStyles((theme) => ({
   visionaryText: {
@@ -38,7 +39,7 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-const RevolutionBlock = () => {
+const RevolutionBlock = ({ setTabValue }) => {
   const classes = useStyle();
   const theme = useTheme();
 
@@ -66,7 +67,13 @@ const RevolutionBlock = () => {
                 <Typography variant="subtitle1">
                   Some BS revolutionary vision bsbs
                 </Typography>
-                <Button variant="outlined" className={classes.learnButton}>
+                <Button
+                  variant="outlined"
+                  className={classes.learnButton}
+                  component={Link}
+                  to="/revolution"
+                  onClick={() => setTabValue(2)}
+                >
                   <span className={classes.learnMoreButton}>Learn More</span>
                   <ButtonArrow
                     width={15}

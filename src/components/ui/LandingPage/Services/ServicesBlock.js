@@ -10,6 +10,7 @@ import {
 
 import ButtonArrow from "../../ButtonArrow/ButtonArrow";
 import customSoftwareIcon from "../../../../assets/Custom Software Icon.svg";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   serviceContainer: {
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ServicesBlock = () => {
+const ServicesBlock = ({ setTabValue, setSelectedIndex }) => {
   const classes = useStyles();
   const theme = useTheme();
   // const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
@@ -59,7 +60,16 @@ const ServicesBlock = () => {
         <Typography variant="subtitle1">
           bum to <span className={classes.specialText}>hero</span> lol
         </Typography>
-        <Button variant="outlined" className={classes.learnButton}>
+        <Button
+          variant="outlined"
+          className={classes.learnButton}
+          component={Link}
+          to="/software"
+          onClick={() => {
+            setTabValue(1);
+            setSelectedIndex(1);
+          }}
+        >
           <span className={classes.learnMoreButton}>Learn More</span>
           <ButtonArrow
             width={15}

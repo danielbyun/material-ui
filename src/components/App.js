@@ -41,6 +41,7 @@ const App = () => {
           common: {
             blue: ARC_BLUE,
             orange: ARC_ORANGE,
+            white: "white",
           },
           primary: {
             main: ARC_BLUE,
@@ -120,7 +121,17 @@ const App = () => {
           setTabValue={setTabValue}
         />
         <Switch>
-          <Route exact path="/" component={LandingPage} />
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <LandingPage
+                {...props}
+                setTabValue={setTabValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
+          />
           <Route exact path="/services" component={() => <div>Services</div>} />
           <Route
             exact

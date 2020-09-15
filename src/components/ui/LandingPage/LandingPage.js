@@ -7,6 +7,7 @@ import MobileBlock from "./Mobile/MobileBlock";
 import WebBlock from "./Web/WebBlock";
 import RevolutionBlock from "./Revolution/RevolutionBlock";
 import InformationBlock from "./Information/InformationBlock";
+import CallToAction from "./CallToAction/CallToAction";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -61,28 +62,49 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const LandingPage = () => {
+const LandingPage = ({ setTabValue, setSelectedIndex }) => {
   const classes = useStyles();
 
   return (
     <Grid container direction="column" className={classes.mainContainer}>
       {/* ===== HERO BLOCK ===== */}
-      <HeroBlock />
+      <HeroBlock
+        setTabValue={setTabValue}
+        setSelectedIndex={setSelectedIndex}
+      />
 
       {/* ==== SERVICES BLOCK ===== */}
-      <ServicesBlock />
+      <ServicesBlock
+        setTabValue={setTabValue}
+        setSelectedIndex={setSelectedIndex}
+      />
 
       {/* ===== IOS / ANDROID BLOCK ===== */}
-      <MobileBlock />
+      <MobileBlock
+        setTabValue={setTabValue}
+        setSelectedIndex={setSelectedIndex}
+      />
 
       {/* ===== WEB BLOCK ===== */}
-      <WebBlock />
+      <WebBlock setTabValue={setTabValue} setSelectedIndex={setSelectedIndex} />
 
       {/* ===== REVOLUTION BLOCK ===== */}
-      <RevolutionBlock />
+      <RevolutionBlock
+        setTabValue={setTabValue}
+        setSelectedIndex={setSelectedIndex}
+      />
 
       {/* ===== INFORMATION BLOCK ===== */}
-      <InformationBlock />
+      <InformationBlock
+        setTabValue={setTabValue}
+        setSelectedIndex={setSelectedIndex}
+      />
+
+      {/* ===== CALL TO ACTION BLOCK */}
+      <CallToAction
+        setTabValue={setTabValue}
+        setSelectedIndex={setSelectedIndex}
+      />
     </Grid>
   );
 };

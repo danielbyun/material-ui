@@ -11,6 +11,7 @@ import clsx from "clsx";
 
 import animationData from "../../../../assets/animations/landinganimation/data";
 import ButtonArrow from "../../ButtonArrow/ButtonArrow";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   animation: {
@@ -73,7 +74,7 @@ const defaultOptions = {
   },
 };
 
-const HeroBlock = () => {
+const HeroBlock = ({ setTabValue }) => {
   const classes = useStyles();
   const theme = useTheme();
   return (
@@ -89,12 +90,21 @@ const HeroBlock = () => {
                 className={classes.estimateButton}
                 variant="contained"
                 color="secondary"
+                component={Link}
+                to="/estimate"
+                onClick={() => setTabValue(5)}
               >
                 Free Estimate
               </Button>
             </Grid>
             <Grid item>
-              <Button className={classes.learnButtonHero} variant="outlined">
+              <Button
+                className={classes.learnButtonHero}
+                variant="outlined"
+                component={Link}
+                to="/revolution"
+                onClick={() => setTabValue(2)}
+              >
                 <span className={clsx([classes.span, classes.learnButton])}>
                   Learn More
                 </span>

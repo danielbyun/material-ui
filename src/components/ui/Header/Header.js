@@ -128,6 +128,9 @@ const Header = ({
             }
           }
           break;
+        case "/estimate":
+          setTabValue(5);
+          break;
         default:
           break;
       }

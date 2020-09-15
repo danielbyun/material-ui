@@ -10,6 +10,7 @@ import {
 
 import webIcon from "../../../../assets/websiteIcon.svg";
 import ButtonArrow from "../../ButtonArrow/ButtonArrow";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   webContainer: {
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const WebBlock = () => {
+const WebBlock = ({ setTabValue, setSelectedIndex }) => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -61,7 +62,16 @@ const WebBlock = () => {
           Makin all the damn <span className={classes.specialText}>cool</span>{" "}
           {matchesSM ? <br /> : null}webapps you'll see lol
         </Typography>
-        <Button variant="outlined" className={classes.learnButton}>
+        <Button
+          variant="outlined"
+          className={classes.learnButton}
+          component={Link}
+          to="/web"
+          onClick={() => {
+            setTabValue(1);
+            setSelectedIndex(3);
+          }}
+        >
           <span className={classes.learnMoreButton}>Learn More</span>
           <ButtonArrow
             width={15}

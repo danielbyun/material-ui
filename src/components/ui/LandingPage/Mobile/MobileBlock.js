@@ -11,6 +11,7 @@ import {
 
 import mobileAppsIcon from "../../../../assets/mobileIcon.svg";
 import ButtonArrow from "../../ButtonArrow/ButtonArrow";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   mobileContainer: {
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MobileBlock = () => {
+const MobileBlock = ({ setTabValue, setSelectedIndex }) => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -68,7 +69,16 @@ const MobileBlock = () => {
           <span className={classes.specialText}>Both</span> mobile platforms lol{" "}
           {matchesSM ? null : <br />}
         </Typography>
-        <Button variant="outlined" className={classes.learnButton}>
+        <Button
+          variant="outlined"
+          className={classes.learnButton}
+          component={Link}
+          to="/mobile"
+          onClick={() => {
+            setTabValue(1);
+            setSelectedIndex(2);
+          }}
+        >
           <span className={classes.learnMoreButton}>Learn More</span>
           <ButtonArrow
             width={15}
