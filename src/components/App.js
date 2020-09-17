@@ -17,6 +17,7 @@ import WebApps from "./ui/Pages/WebApps/WebApps";
 import Revolution from "./ui/Pages/Revolution/Revolution";
 import AboutUs from "./ui/Pages/AboutUs/AboutUs";
 import ContactUs from "./ui/Pages/ContactUs/ContactUs";
+import Estimate from "./ui/Pages/Estimate/Estimate";
 
 const ARC_BLUE = "#0B72B9";
 const ARC_ORANGE = "#FFBA60";
@@ -205,6 +206,17 @@ const App = () => {
             path="/contact"
             component={(props) => (
               <ContactUs {...props} setTabValue={setTabValue} />
+            )}
+          />
+          <Route
+            exact
+            path="/estimate"
+            component={(props) => (
+              <Estimate
+                {...props}
+                setTabValue={setTabValue}
+                setSelectedIndex={setSelectedIndex}
+              />
             )}
           />
         </Switch>
