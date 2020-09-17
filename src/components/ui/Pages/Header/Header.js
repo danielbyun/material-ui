@@ -9,14 +9,14 @@ import {
   useTheme,
 } from "@material-ui/core";
 
-import logo from "../../../assets/logo.svg";
+import logo from "../../../../assets/logo.svg";
 
 import { Link } from "react-router-dom";
-import ElevationScroll from "../ElevationScroll/ElevationScroll";
+import ElevationScroll from "../../ElevationScroll/ElevationScroll";
 
 import HeaderTabs from "./Tabs/HeaderTabs";
 import HeaderDrawer from "./HeaderDrawer/HeaderDrawer";
-import { menuOptions } from "../../util/menuOptions/menuOptions";
+import { menuOptions } from "../../../util/menuOptions/menuOptions";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {

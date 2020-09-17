@@ -5,9 +5,18 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import Header from "./ui/Header/Header";
-import Footer from "./ui/Footer/Footer";
-import LandingPage from "./ui/LandingPage/LandingPage";
+import LandingPage from "./ui/Pages/LandingPage/LandingPage";
+import Header from "./ui/Pages/Header/Header";
+import Footer from "./ui/Pages/Footer/Footer";
+
+import Services from "./ui/Pages/Services/Services";
+import StyledComponentTest from "./StyledComponentTest";
+import CustomSoftware from "./ui/Pages/CusfomSoftware/CustomSoftware";
+import MobileApps from "./ui/Pages/MobileApps/MobileApps";
+import WebApps from "./ui/Pages/WebApps/WebApps";
+import Revolution from "./ui/Pages/Revolution/Revolution";
+import AboutUs from "./ui/Pages/AboutUs/AboutUs";
+import ContactUs from "./ui/Pages/ContactUs/ContactUs";
 
 const ARC_BLUE = "#0B72B9";
 const ARC_ORANGE = "#FFBA60";
@@ -132,29 +141,72 @@ const App = () => {
               />
             )}
           />
-          <Route exact path="/services" component={() => <div>Services</div>} />
+          <Route
+            exact
+            path="/services"
+            component={(props) => (
+              <Services
+                {...props}
+                setTabValue={setTabValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
+          />
+          <Route exact path="/hoctest" component={StyledComponentTest} />
           <Route
             exact
             path="/software"
-            component={() => <div>Custom Software</div>}
+            component={(props) => (
+              <CustomSoftware
+                {...props}
+                setTabValue={setTabValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route
             exact
             path="/mobile"
-            component={() => <div>Mobile Apps</div>}
+            component={(props) => (
+              <MobileApps
+                {...props}
+                setTabValue={setTabValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route
             exact
             path="/web"
-            component={() => <div>Web Development</div>}
+            component={(props) => (
+              <WebApps
+                {...props}
+                setTabValue={setTabValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route
             exact
             path="/revolution"
-            component={() => <div>Revolution</div>}
+            component={(props) => (
+              <Revolution {...props} setTabValue={setTabValue} />
+            )}
           />
-          <Route exact path="/about" component={() => <div>About</div>} />
-          <Route exact path="/contact" component={() => <div>Contact</div>} />
+          <Route
+            exact
+            path="/about"
+            component={(props) => (
+              <AboutUs {...props} setTabValue={setTabValue} />
+            )}
+          />
+          <Route
+            exact
+            path="/contact"
+            component={(props) => (
+              <ContactUs {...props} setTabValue={setTabValue} />
+            )}
+          />
         </Switch>
         <Footer
           selectedIndex={selectedIndex}

@@ -8,8 +8,8 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 
-import informationBackground from "../../../../assets/infoBackground.svg";
-import ButtonArrow from "../../ButtonArrow/ButtonArrow";
+import informationBackground from "../../../../../assets/infoBackground.svg";
+import ButtonArrow from "../../../ButtonArrow/ButtonArrow";
 import { Link } from "react-router-dom";
 
 const useStyle = makeStyles((theme) => ({
@@ -92,7 +92,6 @@ const InformationBlock = ({ setTabValue }) => {
   const classes = useStyle();
   const theme = useTheme();
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <Grid item>

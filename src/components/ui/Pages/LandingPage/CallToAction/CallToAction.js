@@ -10,9 +10,9 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 
-import ButtonArrow from "../../ButtonArrow/ButtonArrow";
-import background from "../../../../assets/background.jpg";
-import mobileBackground from "../../../../assets/mobileBackground.jpg";
+import ButtonArrow from "../../../ButtonArrow/ButtonArrow";
+import background from "../../../../../assets/background.jpg";
+import mobileBackground from "../../../../../assets/mobileBackground.jpg";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({

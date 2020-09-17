@@ -1,24 +1,23 @@
 import React from "react";
-
 import {
   Grid,
   makeStyles,
+  useTheme,
   Typography,
   Button,
-  useTheme,
   useMediaQuery,
 } from "@material-ui/core";
 
-import mobileAppsIcon from "../../../../assets/mobileIcon.svg";
-import ButtonArrow from "../../ButtonArrow/ButtonArrow";
+import webIcon from "../../../../../assets/websiteIcon.svg";
+import ButtonArrow from "../../../ButtonArrow/ButtonArrow";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  mobileContainer: {
+  webContainer: {
     marginTop: "12rem",
     [theme.breakpoints.down("sm")]: { justifyContent: "center", padding: 25 },
   },
-  mobileTexts: {
+  webTexts: {
     marginLeft: "5rem",
     [theme.breakpoints.down("sm")]: { marginLeft: 0, textAlign: "center" },
   },
@@ -33,12 +32,6 @@ const useStyles = makeStyles((theme) => ({
   subtitle: {
     marginBottom: "1rem",
   },
-  mobileIcon: {
-    marginRight: "5rem",
-    [theme.breakpoints.down("sm")]: {
-      marginRight: 0,
-    },
-  },
   icon: {
     marginLeft: "2rem",
     [theme.breakpoints.down("xs")]: {
@@ -47,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MobileBlock = ({ setTabValue, setSelectedIndex }) => {
+const WebBlock = ({ setTabValue, setSelectedIndex }) => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -57,26 +50,26 @@ const MobileBlock = ({ setTabValue, setSelectedIndex }) => {
     <Grid
       container
       direction="row"
-      className={classes.mobileContainer}
-      justify={matchesSM ? "center" : "flex-end"}
+      className={classes.webContainer}
+      // justify={matchesSM ? "center" : undefined}
     >
-      <Grid item className={classes.mobileTexts}>
+      <Grid item className={classes.webTexts}>
         <Typography variant="h4">iOS / Android Development</Typography>
         <Typography variant="subtitle1" className={classes.subtitle}>
-          I make APPS~
+          I make WEB APPS *~!
         </Typography>
         <Typography variant="subtitle1">
-          <span className={classes.specialText}>Both</span> mobile platforms lol{" "}
-          {matchesSM ? null : <br />}
+          Makin all the damn <span className={classes.specialText}>cool</span>{" "}
+          {matchesSM ? <br /> : null}webapps you'll see lol
         </Typography>
         <Button
           variant="outlined"
           className={classes.learnButton}
           component={Link}
-          to="/mobile"
+          to="/web"
           onClick={() => {
             setTabValue(1);
-            setSelectedIndex(2);
+            setSelectedIndex(3);
           }}
         >
           <span className={classes.learnMoreButton}>Learn More</span>
@@ -87,15 +80,11 @@ const MobileBlock = ({ setTabValue, setSelectedIndex }) => {
           />
         </Button>
       </Grid>
-      <Grid item className={classes.mobileIcon}>
-        <img
-          className={classes.icon}
-          alt="mobile apps icon"
-          src={mobileAppsIcon}
-        />
+      <Grid item>
+        <img className={classes.icon} alt="mobile apps icon" src={webIcon} />
       </Grid>
     </Grid>
   );
 };
 
-export default MobileBlock;
+export default WebBlock;

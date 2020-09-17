@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   makeStyles,
   Grid,
@@ -9,9 +10,8 @@ import {
 import Lottie from "react-lottie";
 import clsx from "clsx";
 
-import animationData from "../../../../assets/animations/landinganimation/data";
-import ButtonArrow from "../../ButtonArrow/ButtonArrow";
-import { Link } from "react-router-dom";
+import animationData from "../../../../../assets/animations/landinganimation/data";
+import ButtonArrow from "../../../ButtonArrow/ButtonArrow";
 
 const useStyles = makeStyles((theme) => ({
   animation: {

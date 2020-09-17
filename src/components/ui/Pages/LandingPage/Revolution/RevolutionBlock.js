@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -8,9 +9,8 @@ import {
   makeStyles,
   useTheme,
 } from "@material-ui/core";
-import ButtonArrow from "../../ButtonArrow/ButtonArrow";
-import revolutionBackground from "../../../../assets/repeatingBackground.svg";
-import { Link } from "react-router-dom";
+import ButtonArrow from "../../../ButtonArrow/ButtonArrow";
+import revolutionBackground from "../../../../../assets/repeatingBackground.svg";
 
 const useStyle = makeStyles((theme) => ({
   visionaryText: {

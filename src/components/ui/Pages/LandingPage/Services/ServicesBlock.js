@@ -8,8 +8,8 @@ import {
   // useMediaQuery,
 } from "@material-ui/core";
 
-import ButtonArrow from "../../ButtonArrow/ButtonArrow";
-import customSoftwareIcon from "../../../../assets/Custom Software Icon.svg";
+import ButtonArrow from "../../../ButtonArrow/ButtonArrow";
+import customSoftwareIcon from "../../../../../assets/Custom Software Icon.svg";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
